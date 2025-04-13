@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI-powered resume and cover letter generator. Create professional job application documents in minutes.">
+    <title>{% block title %}AI Resume & Cover Letter Generator{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="AI Resume & Cover Letter Generator">
+    <meta property="og:description" content="Create professional resumes and cover letters in minutes with AI assistance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="{{ url_for('static', filename='images/og-image.png', _external=True) }}">
+    
+    <!-- Additional SEO tags -->
+    <meta name="keywords" content="resume builder, cover letter generator, AI resume, job application, free resume builder">
+    
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <span class="logo-text">AI Resume Builder</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                    <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional resumes and cover letters in minutes with the power of AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                        <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.year }} AI Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+    
+    <!-- Cookie consent -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="container">
+            <p>This website uses cookies to ensure you get the best experience. By using this site, you agree to our <a href="{{ url_for('privacy_policy') }}">privacy policy</a>.</p>
+            <button id="accept-cookies" class="btn btn-primary">Accept</button>
+        </div>
+    </div>
+</body>
+</html>

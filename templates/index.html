@@ -3,28 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Flask Web App</title>
+    <meta name="description" content="Free AI-powered resume and cover letter generator. Create professional job application documents in minutes.">
+    <title>AI Resume & Cover Letter Generator - Create Professional Documents in Minutes</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="AI Resume & Cover Letter Generator">
+    <meta property="og:description" content="Create professional resumes and cover letters in minutes with AI assistance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+
+    <!-- Additional SEO tags -->
+    <meta name="keywords" content="resume builder, cover letter generator, AI resume, job application, free resume builder">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Simple Web App</h1>
-        <p>This is a simple web application built with Flask, HTML, CSS, and JavaScript.</p>
-        
-        <div class="card">
-            <h2>Features</h2>
-            <ul>
-                <li>Simple Flask backend</li>
-                <li>Clean HTML structure</li>
-                <li>CSS styling</li>
-                <li>JavaScript interactivity</li>
-            </ul>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <span class="logo-text">AI Resume Builder</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                    <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                    <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        
-        <button id="getMessage">Get Message from API</button>
-        <div id="apiMessage" class="message-box"></div>
-    </div>
+    </header>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Create Professional Resumes & Cover Letters with AI</h1>
+                    <p class="hero-subtitle">Generate tailored, ATS-friendly job application documents in minutes - completely free!</p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('resume_builder') }}" class="btn btn-primary">Create Resume</a>
+                        <a href="{{ url_for('cover_letter_builder') }}" class="btn btn-secondary">Write Cover Letter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our AI Resume Builder?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Powered by Advanced AI</h3>
+                        <p>Our tool uses Google's Gemini 2.0 Flash model to generate professional, tailored content for your specific industry and role.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Save Hours of Time</h3>
+                        <p>Create a professional resume or cover letter in minutes instead of hours. Just fill in your details and let AI do the hard work.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>ATS-Friendly Formats</h3>
+                        <p>Our templates are designed to pass Applicant Tracking Systems, increasing your chances of getting an interview.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Multiple Templates</h3>
+                        <p>Choose from various professional templates designed for different industries and career levels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Enter Your Information</h3>
+                        <p>Fill in your personal details, work experience, education, and skills in our simple form.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Generates Content</h3>
+                        <p>Our AI analyzes your information and creates professional, tailored content for your target job.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Preview & Edit</h3>
+                        <p>Review the generated content, make any desired changes, and select your preferred template.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Download PDF</h3>
+                        <p>Download your finished resume or cover letter as a professional PDF document ready to send to employers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Create Your Professional Resume?</h2>
+                <p>Join thousands of job seekers who have successfully landed interviews with our AI-powered tools.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('resume_builder') }}" class="btn btn-primary">Create Resume Now</a>
+                    <a href="{{ url_for('cover_letter_builder') }}" class="btn btn-secondary">Write Cover Letter</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">Is this service really free?</div>
+                        <div class="accordion-content">
+                            <p>Yes, our basic resume and cover letter generation service is completely free. We monetize through non-intrusive advertisements to keep the service accessible to everyone.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">How does the AI generate content?</div>
+                        <div class="accordion-content">
+                            <p>Our tool uses Google's Gemini 2.0 Flash model, which analyzes your input information and generates professional content tailored to your target job and industry.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">Are the resumes ATS-friendly?</div>
+                        <div class="accordion-content">
+                            <p>Yes, all our templates are designed to be ATS (Applicant Tracking System) friendly. They use standard formatting, appropriate section headings, and relevant keywords to help your resume pass automated screening systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional resumes and cover letters in minutes with the power of AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                        <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- Cookie consent -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="container">
+            <p>This website uses cookies to ensure you get the best experience. By using this site, you agree to our <a href="{{ url_for('privacy_policy') }}">privacy policy</a>.</p>
+            <button id="accept-cookies" class="btn btn-primary">Accept</button>
+        </div>
+    </div>
 </body>
 </html>

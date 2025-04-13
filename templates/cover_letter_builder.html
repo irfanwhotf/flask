@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a professional cover letter with our AI-powered cover letter generator. Generate tailored content for your job application.">
+    <title>AI Cover Letter Generator - Create Your Professional Cover Letter</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="AI Cover Letter Generator">
+    <meta property="og:description" content="Create a professional cover letter with our AI-powered generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <span class="logo-text">AI Resume Builder</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                    <li><a href="{{ url_for('cover_letter_builder') }}" class="active">Cover Letter</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Create Your Professional Cover Letter</h1>
+                <p>Fill in your details below and let our AI generate a tailored, professional cover letter for your job application.</p>
+            </div>
+        </section>
+
+        <section class="cover-letter-builder">
+            <div class="container">
+                <div class="form-container">
+                    <div class="progress-bar">
+                        <div class="progress-step active" data-step="personal">
+                            <span class="step-number">1</span>
+                            <span class="step-label">Personal Info</span>
+                        </div>
+                        <div class="progress-step" data-step="job">
+                            <span class="step-number">2</span>
+                            <span class="step-label">Job Details</span>
+                        </div>
+                        <div class="progress-step" data-step="highlights">
+                            <span class="step-number">3</span>
+                            <span class="step-label">Highlights</span>
+                        </div>
+                        <div class="progress-step" data-step="preview">
+                            <span class="step-number">4</span>
+                            <span class="step-label">Preview</span>
+                        </div>
+                    </div>
+
+                    <form id="coverLetterForm">
+                        <!-- Step 1: Personal Information -->
+                        <div class="form-step active" id="personal-step">
+                            <h2>Personal Information</h2>
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" placeholder="City, State">
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-primary next-step">Next: Job Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Job Details -->
+                        <div class="form-step" id="job-step">
+                            <h2>Job Details</h2>
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title</label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hiringManager">Hiring Manager's Name (if known)</label>
+                                <input type="text" id="hiringManager" name="hiringManager" placeholder="Leave blank if unknown">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobRequirements">Job Requirements</label>
+                                <textarea id="jobRequirements" name="jobRequirements" rows="4" placeholder="Copy and paste key requirements from the job posting"></textarea>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Previous</button>
+                                <button type="button" class="btn btn-primary next-step">Next: Highlights</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Experience & Skills Highlights -->
+                        <div class="form-step" id="highlights-step">
+                            <h2>Experience & Skills Highlights</h2>
+                            <div class="form-group">
+                                <label for="experienceHighlights">Key Experience to Highlight</label>
+                                <textarea id="experienceHighlights" name="experienceHighlights" rows="4" placeholder="List your most relevant experience for this position (separate with new lines)"></textarea>
+                                <small>Example: 5 years of project management experience, Led a team of 10 developers</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="skillsHighlights">Key Skills to Highlight</label>
+                                <textarea id="skillsHighlights" name="skillsHighlights" rows="4" placeholder="List your most relevant skills for this position (separate with new lines)"></textarea>
+                                <small>Example: JavaScript, Project Management, Customer Service</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="tone">Tone of Letter</label>
+                                <select id="tone" name="tone">
+                                    <option value="professional">Professional</option>
+                                    <option value="enthusiastic">Enthusiastic</option>
+                                    <option value="confident">Confident</option>
+                                    <option value="formal">Formal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="template">Cover Letter Template</label>
+                                <select id="template" name="template">
+                                    <option value="modern">Modern</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="minimal">Minimal</option>
+                                </select>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Previous</button>
+                                <button type="button" id="generate-cover-letter" class="btn btn-primary">Generate Cover Letter</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Preview -->
+                        <div class="form-step" id="preview-step">
+                            <h2>Your Cover Letter</h2>
+                            <div class="loading-indicator" id="loading-cover-letter">
+                                <div class="spinner"></div>
+                                <p>Generating your professional cover letter...</p>
+                            </div>
+                            <div id="cover-letter-preview" class="cover-letter-preview">
+                                <div id="cover-letter-content"></div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Edit Cover Letter</button>
+                                <a href="/download-cover-letter-pdf" class="btn btn-primary" id="download-cover-letter">Download PDF</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional resumes and cover letters in minutes with the power of AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                        <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form navigation
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const formSteps = document.querySelectorAll('.form-step');
+            
+            // Next button functionality
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = document.querySelector('.form-step.active');
+                    const nextStep = currentStep.nextElementSibling;
+                    
+                    // Move to next step
+                    currentStep.classList.remove('active');
+                    nextStep.classList.add('active');
+                    
+                    // Update progress bar
+                    const nextStepId = nextStep.id.split('-')[0];
+                    updateProgressBar(nextStepId);
+                });
+            });
+            
+            // Previous button functionality
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = document.querySelector('.form-step.active');
+                    const prevStep = currentStep.previousElementSibling;
+                    
+                    // Move to previous step
+                    currentStep.classList.remove('active');
+                    prevStep.classList.add('active');
+                    
+                    // Update progress bar
+                    const prevStepId = prevStep.id.split('-')[0];
+                    updateProgressBar(prevStepId);
+                });
+            });
+            
+            // Update progress bar
+            function updateProgressBar(stepId) {
+                progressSteps.forEach(step => {
+                    step.classList.remove('active');
+                    if (step.dataset.step === stepId || step.dataset.step === 'personal') {
+                        step.classList.add('active');
+                    }
+                });
+            }
+            
+            // Generate cover letter
+            const generateCoverLetterBtn = document.getElementById('generate-cover-letter');
+            const coverLetterPreview = document.getElementById('cover-letter-preview');
+            const loadingIndicator = document.getElementById('loading-cover-letter');
+            
+            generateCoverLetterBtn.addEventListener('click', function() {
+                // Show loading indicator
+                loadingIndicator.style.display = 'flex';
+                coverLetterPreview.style.display = 'none';
+                
+                // Move to preview step
+                const currentStep = document.querySelector('.form-step.active');
+                const previewStep = document.getElementById('preview-step');
+                
+                currentStep.classList.remove('active');
+                previewStep.classList.add('active');
+                
+                // Update progress bar
+                updateProgressBar('preview');
+                
+                // Collect form data
+                const formData = {
+                    personal_info: {
+                        name: document.getElementById('fullName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        location: document.getElementById('location').value
+                    },
+                    job_details: {
+                        title: document.getElementById('jobTitle').value,
+                        company: document.getElementById('company').value,
+                        hiring_manager: document.getElementById('hiringManager').value,
+                        requirements: document.getElementById('jobRequirements').value
+                    },
+                    experience_highlights: document.getElementById('experienceHighlights').value.split('\n').filter(item => item.trim() !== ''),
+                    skills_highlights: document.getElementById('skillsHighlights').value.split('\n').filter(item => item.trim() !== ''),
+                    tone: document.getElementById('tone').value,
+                    template: document.getElementById('template').value
+                };
+                
+                // Call API to generate cover letter
+                fetch('/api/generate-cover-letter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading indicator
+                    loadingIndicator.style.display = 'none';
+                    coverLetterPreview.style.display = 'block';
+                    
+                    // Populate cover letter preview
+                    document.getElementById('cover-letter-content').innerHTML = data.cover_letter.replace(/\n/g, '<br>');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loadingIndicator.style.display = 'none';
+                    coverLetterPreview.style.display = 'block';
+                    document.getElementById('cover-letter-content').innerHTML = '<p class="error">Error generating cover letter. Please try again.</p>';
+                });
+            });
+        });
+    </script>
+    
+    <!-- Cookie consent -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="container">
+            <p>This website uses cookies to ensure you get the best experience. By using this site, you agree to our <a href="{{ url_for('privacy_policy') }}">privacy policy</a>.</p>
+            <button id="accept-cookies" class="btn btn-primary">Accept</button>
+        </div>
+    </div>
+</body>
+</html>

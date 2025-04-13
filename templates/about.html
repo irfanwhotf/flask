@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about our AI-powered resume and cover letter generator. Create professional job application documents in minutes.">
+    <title>About - AI Resume & Cover Letter Generator</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="About - AI Resume & Cover Letter Generator">
+    <meta property="og:description" content="Learn about our AI-powered resume and cover letter generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <span class="logo-text">AI Resume Builder</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                    <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                    <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>About Our AI Resume Builder</h1>
+                <p>Learn about our mission to help job seekers create professional application materials with ease.</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>At AI Resume Builder, we believe that everyone deserves access to professional job application materials, regardless of their writing skills or experience level. Our mission is to democratize the job application process by providing cutting-edge AI tools that help job seekers present themselves in the best possible light.</p>
+                        
+                        <h2>How It Works</h2>
+                        <p>Our platform leverages Google's Gemini 2.0 Flash model, one of the most advanced AI language models available today. This technology analyzes your input information and generates tailored, professional content specific to your industry, role, and experience level.</p>
+                        <p>Unlike generic templates or one-size-fits-all solutions, our AI creates unique content for each user, highlighting your specific strengths and achievements in a way that resonates with employers and passes through Applicant Tracking Systems (ATS).</p>
+                        
+                        <h2>Our Commitment to Privacy</h2>
+                        <p>We understand that your personal information is sensitive. That's why we don't store your data beyond your current session. Your information is only used temporarily to generate your documents and is not saved after you leave the site.</p>
+                        
+                        <h2>Why Choose Us?</h2>
+                        <ul>
+                            <li><strong>Advanced AI Technology:</strong> Powered by Google's Gemini 2.0 Flash model for high-quality, relevant content</li>
+                            <li><strong>Completely Free:</strong> No hidden fees or premium features locked behind paywalls</li>
+                            <li><strong>Privacy-Focused:</strong> We don't store your personal information</li>
+                            <li><strong>ATS-Friendly:</strong> Our templates are designed to pass through automated screening systems</li>
+                            <li><strong>Industry-Specific:</strong> Content tailored to your specific industry and role</li>
+                            <li><strong>User-Friendly:</strong> Simple, intuitive interface that guides you through the process</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="{{ url_for('static', filename='images/about-image.svg') }}" alt="AI Resume Builder illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">We're a small team of developers, designers, and career experts passionate about helping job seekers succeed.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member-image">
+                            <img src="{{ url_for('static', filename='images/team-1.svg') }}" alt="Team member">
+                        </div>
+                        <h3>Alex Johnson</h3>
+                        <p class="team-member-role">Founder & Developer</p>
+                        <p>With over 10 years of experience in web development and AI, Alex leads our technical development.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-image">
+                            <img src="{{ url_for('static', filename='images/team-2.svg') }}" alt="Team member">
+                        </div>
+                        <h3>Sarah Chen</h3>
+                        <p class="team-member-role">UX Designer</p>
+                        <p>Sarah ensures our platform is intuitive and accessible for users of all technical backgrounds.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-image">
+                            <img src="{{ url_for('static', filename='images/team-3.svg') }}" alt="Team member">
+                        </div>
+                        <h3>Michael Rodriguez</h3>
+                        <p class="team-member-role">Career Expert</p>
+                        <p>As a former HR professional, Michael brings industry insights to our resume and cover letter templates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Create Your Professional Resume?</h2>
+                <p>Join thousands of job seekers who have successfully landed interviews with our AI-powered tools.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('resume_builder') }}" class="btn btn-primary">Create Resume Now</a>
+                    <a href="{{ url_for('cover_letter_builder') }}" class="btn btn-secondary">Write Cover Letter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional resumes and cover letters in minutes with the power of AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('resume_builder') }}">Resume Builder</a></li>
+                        <li><a href="{{ url_for('cover_letter_builder') }}">Cover Letter</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    <!-- Cookie consent -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="container">
+            <p>This website uses cookies to ensure you get the best experience. By using this site, you agree to our <a href="{{ url_for('privacy_policy') }}">privacy policy</a>.</p>
+            <button id="accept-cookies" class="btn btn-primary">Accept</button>
+        </div>
+    </div>
+</body>
+</html>
