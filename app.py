@@ -22,6 +22,9 @@ app = Flask(__name__)
 config_name = os.environ.get('FLASK_CONFIG') or 'default'
 app.config.from_object(config[config_name])
 
+# Set secret key for session
+app.secret_key = app.config.get('SECRET_KEY', 'dev-key-for-development-only')
+
 # Initialize services
 ai_client = None  # Will be initialized when API key is available
 # PDF generation will be implemented in a future update
@@ -99,6 +102,133 @@ John Doe"""
     except Exception as e:
         app.logger.error(f"Error generating cover letter: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
+@app.route('/download-resume-pdf')
+def download_resume_pdf():
+    """Generate and download the resume as a text file (PDF generation to be implemented later)."""
+    try:
+        # Check if resume data exists in session
+        if 'resume_data' not in session:
+            flash('No resume data found. Please generate a resume first.')
+            return redirect(url_for('resume_builder'))
+
+        resume_data = session['resume_data']
+        content = resume_data['content']
+        personal_info = resume_data['personal_info']
+
+        # Create a simple text version of the resume
+        # Process HTML tags to plain text
+        experience_text = content['experience']
+        experience_text = experience_text.replace('<p>', '')
+        experience_text = experience_text.replace('</p>', '\n')
+        experience_text = experience_text.replace('<ul>', '')
+        experience_text = experience_text.replace('</ul>', '')
+        experience_text = experience_text.replace('<li>', '- ')
+        experience_text = experience_text.replace('</li>', '\n')
+        experience_text = experience_text.replace('<strong>', '')
+        experience_text = experience_text.replace('</strong>', '')
+
+        education_text = content['education']
+        education_text = education_text.replace('<p>', '')
+        education_text = education_text.replace('</p>', '\n')
+        education_text = education_text.replace('<strong>', '')
+        education_text = education_text.replace('</strong>', '')
+
+        skills_text = content['skills']
+        skills_text = skills_text.replace('<ul>', '')
+        skills_text = skills_text.replace('</ul>', '')
+        skills_text = skills_text.replace('<li>', '- ')
+        skills_text = skills_text.replace('</li>', '\n')
+
+        resume_text = f"""RESUME
+
+Name: {personal_info.get('name', 'User')}
+Email: {personal_info.get('email', '')}
+Phone: {personal_info.get('phone', '')}
+Location: {personal_info.get('location', '')}
+
+PROFESSIONAL SUMMARY
+{content['summary']}
+
+EXPERIENCE
+{experience_text}
+
+EDUCATION
+{education_text}
+
+SKILLS
+{skills_text}
+"""
+
+        # Create a temporary file
+        temp_file_path = os.path.join(os.getcwd(), 'temp_resume.txt')
+        with open(temp_file_path, 'w') as f:
+            f.write(resume_text)
+
+        # Generate a filename
+        filename = f"Resume_{secure_filename(personal_info.get('name', 'User'))}_{datetime.now().strftime('%Y%m%d')}.txt"
+
+        # Send the file
+        return send_file(
+            temp_file_path,
+            as_attachment=True,
+            download_name=filename,
+            mimetype='text/plain'
+        )
+
+    except Exception as e:
+        app.logger.error(f"Error generating text file: {str(e)}")
+        flash(f"Error generating file: {str(e)}")
+        return redirect(url_for('resume_builder'))
+
+@app.route('/download-cover-letter-pdf')
+def download_cover_letter_pdf():
+    """Generate and download the cover letter as a text file (PDF generation to be implemented later)."""
+    try:
+        # Check if cover letter data exists in session
+        if 'cover_letter_data' not in session:
+            flash('No cover letter data found. Please generate a cover letter first.')
+            return redirect(url_for('cover_letter_builder'))
+
+        cover_letter_data = session['cover_letter_data']
+        text = cover_letter_data['text']
+        personal_info = cover_letter_data['personal_info']
+        job_info = cover_letter_data['job_info']
+
+        # Create a simple text version of the cover letter
+        cover_letter_text = f"""{personal_info.get('name', 'User')}
+{personal_info.get('email', '')}
+{personal_info.get('phone', '')}
+{personal_info.get('location', '')}
+
+Date: {datetime.now().strftime('%B %d, %Y')}
+
+{job_info.get('company', 'Company Name')}
+Re: Application for {job_info.get('title', 'Position')}
+
+{text}
+"""
+
+        # Create a temporary file
+        temp_file_path = os.path.join(os.getcwd(), 'temp_cover_letter.txt')
+        with open(temp_file_path, 'w') as f:
+            f.write(cover_letter_text)
+
+        # Generate a filename
+        filename = f"CoverLetter_{secure_filename(personal_info.get('name', 'User'))}_{datetime.now().strftime('%Y%m%d')}.txt"
+
+        # Send the file
+        return send_file(
+            temp_file_path,
+            as_attachment=True,
+            download_name=filename,
+            mimetype='text/plain'
+        )
+
+    except Exception as e:
+        app.logger.error(f"Error generating text file: {str(e)}")
+        flash(f"Error generating file: {str(e)}")
+        return redirect(url_for('cover_letter_builder'))
 
 @app.route('/api/hello')
 def hello():
