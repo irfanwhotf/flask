@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Team Member 3</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F59E0B" offset="0%"></stop>
+            <stop stop-color="#D97706" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Team-Member-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Background" fill="url(#linearGradient-1)" cx="150" cy="150" r="150"></circle>
+        
+        <!-- Stylized Person -->
+        <circle id="Head" fill="#FFFFFF" cx="150" cy="120" r="50"></circle>
+        <path d="M150,180 C194.18278,180 230,215.81722 230,260 L70,260 C70,215.81722 105.81722,180 150,180 Z" id="Body" fill="#FFFFFF"></path>
+        
+        <!-- Facial Features (minimal) -->
+        <circle id="Eye-Left" fill="#D97706" cx="130" cy="110" r="5"></circle>
+        <circle id="Eye-Right" fill="#D97706" cx="170" cy="110" r="5"></circle>
+        <path d="M130,140 C130,140 140,150 150,150 C160,150 170,140 170,140" id="Smile" stroke="#D97706" stroke-width="3" stroke-linecap="round"></path>
+        
+        <!-- Glasses -->
+        <circle id="Glasses-Left" stroke="#D97706" stroke-width="3" cx="130" cy="110" r="15"></circle>
+        <circle id="Glasses-Right" stroke="#D97706" stroke-width="3" cx="170" cy="110" r="15"></circle>
+        <line x1="145" y1="110" x2="155" y2="110" id="Glasses-Bridge" stroke="#D97706" stroke-width="3"></line>
+    </g>
+</svg>

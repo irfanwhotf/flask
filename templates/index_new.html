@@ -1,0 +1,143 @@
+{% extends "base_new.html" %}
+
+{% block title %}AI Resume & Cover Letter Generator - Create Professional Documents in Minutes{% endblock %}
+
+{% block meta_description %}Create professional resumes and cover letters in minutes with our AI-powered generator. Free, fast, and tailored to your industry.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-slate-900">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in">
+                    Create Professional <span class="text-amber-400">Resumes</span> & <span class="text-amber-400">Cover Letters</span> with AI
+                </h1>
+                <p class="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in" style="animation-delay: 0.2s">
+                    Generate tailored, ATS-friendly job application documents in minutes - completely free!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style="animation-delay: 0.4s">
+                    <a href="{{ url_for('resume_builder') }}" class="bg-white hover:bg-slate-100 text-primary-700 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                        </svg>
+                        Create Resume
+                    </a>
+                    <a href="{{ url_for('cover_letter_builder') }}" class="bg-transparent hover:bg-white/10 text-white border-2 border-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm0 2a1 1 0 00-1 1v6a1 1 0 001 1h10a1 1 0 001-1V7a1 1 0 00-1-1H5z" clip-rule="evenodd" />
+                        </svg>
+                        Write Cover Letter
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 animate-fade-in" style="animation-delay: 0.6s">
+                <div class="relative">
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-amber-400 rounded-lg opacity-50 animate-pulse"></div>
+                    <div class="absolute -bottom-6 -right-6 w-12 h-12 bg-primary-400 rounded-full opacity-50 animate-pulse" style="animation-delay: 1s"></div>
+                    
+                    <!-- Main image with glassmorphism effect -->
+                    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+                        <img src="{{ url_for('static', filename='images/hero-image.svg') }}" alt="Resume and cover letter illustration" class="w-full h-auto transform hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#features" class="text-white/70 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted By Section -->
+<section class="bg-slate-50 dark:bg-slate-800/50 py-8 border-y border-slate-200 dark:border-slate-700/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-slate-500 dark:text-slate-400 font-medium mb-6">Trusted by job seekers from top companies</p>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="Google" class="h-6 md:h-8 opacity-50 dark:invert">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon" class="h-6 md:h-8 opacity-50 dark:invert">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="Microsoft" class="h-6 md:h-8 opacity-50 dark:invert">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" alt="IBM" class="h-6 md:h-8 opacity-50 dark:invert">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="Netflix" class="h-6 md:h-8 opacity-50 dark:invert">
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-20 bg-white dark:bg-slate-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Why Choose Our AI Resume Builder?</h2>
+            <p class="text-lg text-slate-600 dark:text-slate-400">Our platform combines cutting-edge AI with professional design to help you stand out in the job market.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 dark:border-slate-700">
+                <div class="bg-primary-100 dark:bg-primary-900/30 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Powered by Advanced AI</h3>
+                <p class="text-slate-600 dark:text-slate-400">Our tool uses Google's Gemini 2.0 Flash model to generate professional, tailored content for your specific industry and role.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 dark:border-slate-700">
+                <div class="bg-primary-100 dark:bg-primary-900/30 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Save Hours of Time</h3>
+                <p class="text-slate-600 dark:text-slate-400">Create a professional resume or cover letter in minutes instead of hours. Just fill in your details and let AI do the hard work.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 dark:border-slate-700">
+                <div class="bg-primary-100 dark:bg-primary-900/30 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">ATS-Friendly Formats</h3>
+                <p class="text-slate-600 dark:text-slate-400">Our templates are designed to pass Applicant Tracking Systems, increasing your chances of getting an interview.</p>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 dark:border-slate-700">
+                <div class="bg-primary-100 dark:bg-primary-900/30 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Multiple Templates</h3>
+                <p class="text-slate-600 dark:text-slate-400">Choose from various professional templates designed for different industries and career levels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'index_part2.html' %}
+{% include 'index_part3.html' %}
+{% endblock %}

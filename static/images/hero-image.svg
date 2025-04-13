@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Hero Image</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Hero-Image" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="800" height="600" rx="20"></rect>
+        
+        <!-- Document 1 -->
+        <g id="Resume" transform="translate(150, 100)">
+            <rect id="Paper" fill="#FFFFFF" x="0" y="0" width="300" height="400" rx="8"></rect>
+            <rect id="Header" fill="#3B82F6" x="0" y="0" width="300" height="60" rx="8"></rect>
+            <rect id="Name" fill="#FFFFFF" x="20" y="20" width="150" height="20" rx="4"></rect>
+            
+            <rect id="Section1" fill="#E5E7EB" x="20" y="80" width="260" height="10" rx="2"></rect>
+            <rect id="Line1" fill="#F3F4F6" x="20" y="100" width="260" height="6" rx="2"></rect>
+            <rect id="Line2" fill="#F3F4F6" x="20" y="116" width="260" height="6" rx="2"></rect>
+            <rect id="Line3" fill="#F3F4F6" x="20" y="132" width="200" height="6" rx="2"></rect>
+            
+            <rect id="Section2" fill="#E5E7EB" x="20" y="160" width="260" height="10" rx="2"></rect>
+            <rect id="Line4" fill="#F3F4F6" x="20" y="180" width="260" height="6" rx="2"></rect>
+            <rect id="Line5" fill="#F3F4F6" x="20" y="196" width="260" height="6" rx="2"></rect>
+            <rect id="Line6" fill="#F3F4F6" x="20" y="212" width="180" height="6" rx="2"></rect>
+            
+            <rect id="Section3" fill="#E5E7EB" x="20" y="240" width="260" height="10" rx="2"></rect>
+            <rect id="Line7" fill="#F3F4F6" x="20" y="260" width="260" height="6" rx="2"></rect>
+            <rect id="Line8" fill="#F3F4F6" x="20" y="276" width="260" height="6" rx="2"></rect>
+            <rect id="Line9" fill="#F3F4F6" x="20" y="292" width="220" height="6" rx="2"></rect>
+            
+            <rect id="Section4" fill="#E5E7EB" x="20" y="320" width="260" height="10" rx="2"></rect>
+            <rect id="Line10" fill="#F3F4F6" x="20" y="340" width="120" height="6" rx="2"></rect>
+            <rect id="Line11" fill="#F3F4F6" x="150" y="340" width="130" height="6" rx="2"></rect>
+            <rect id="Line12" fill="#F3F4F6" x="20" y="356" width="90" height="6" rx="2"></rect>
+            <rect id="Line13" fill="#F3F4F6" x="120" y="356" width="160" height="6" rx="2"></rect>
+        </g>
+        
+        <!-- Document 2 -->
+        <g id="Cover-Letter" transform="translate(350, 150)">
+            <rect id="Paper" fill="#FFFFFF" x="0" y="0" width="300" height="350" rx="8"></rect>
+            
+            <rect id="Address" fill="#F3F4F6" x="180" y="20" width="100" height="40" rx="2"></rect>
+            <rect id="Date" fill="#F3F4F6" x="20" y="80" width="80" height="6" rx="2"></rect>
+            
+            <rect id="Recipient" fill="#F3F4F6" x="20" y="100" width="120" height="20" rx="2"></rect>
+            
+            <rect id="Salutation" fill="#F3F4F6" x="20" y="140" width="100" height="6" rx="2"></rect>
+            
+            <rect id="Paragraph1" fill="#F3F4F6" x="20" y="160" width="260" height="6" rx="2"></rect>
+            <rect id="Paragraph1-2" fill="#F3F4F6" x="20" y="176" width="260" height="6" rx="2"></rect>
+            <rect id="Paragraph1-3" fill="#F3F4F6" x="20" y="192" width="200" height="6" rx="2"></rect>
+            
+            <rect id="Paragraph2" fill="#F3F4F6" x="20" y="220" width="260" height="6" rx="2"></rect>
+            <rect id="Paragraph2-2" fill="#F3F4F6" x="20" y="236" width="260" height="6" rx="2"></rect>
+            <rect id="Paragraph2-3" fill="#F3F4F6" x="20" y="252" width="230" height="6" rx="2"></rect>
+            
+            <rect id="Closing" fill="#F3F4F6" x="20" y="280" width="60" height="6" rx="2"></rect>
+            <rect id="Signature" fill="#F3F4F6" x="20" y="300" width="100" height="10" rx="2"></rect>
+        </g>
+        
+        <!-- Decorative Elements -->
+        <circle id="Circle1" fill="#3B82F6" opacity="0.2" cx="100" cy="150" r="50"></circle>
+        <circle id="Circle2" fill="#F59E0B" opacity="0.2" cx="700" cy="450" r="70"></circle>
+        <rect id="Rectangle1" fill="#10B981" opacity="0.2" x="600" y="100" width="100" height="100" rx="20"></rect>
+        <rect id="Rectangle2" fill="#EF4444" opacity="0.2" x="100" y="400" width="80" height="80" rx="15"></rect>
+        
+        <!-- Overlay -->
+        <rect id="Overlay" fill="url(#linearGradient-1)" x="0" y="0" width="800" height="600"></rect>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+RESUME
+
+Name: Mohammed Irfan
+Email: mohammed.irfan1@s.amity.edu
+Phone: 08296580564
+Location: chikkaballapur
+
+PROFESSIONAL SUMMARY
+Dedicated software engineer with experience in web development and AI integration. Skilled in Python, JavaScript, and modern frameworks. Passionate about creating user-friendly applications with clean, maintainable code.
+
+EXPERIENCE
+Software Engineer, Tech Solutions Inc. (2020-Present)
+- Developed responsive web applications using modern JavaScript frameworks
+- Implemented RESTful APIs with Python Flask
+- Improved application performance by 40%
+
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Technology, 2016-2020
+
+
+SKILLS
+- Programming: Python, JavaScript, HTML/CSS
+- Frameworks: Flask, React, Bootstrap
+- Tools: Git, Docker, AWS
+

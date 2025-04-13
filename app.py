@@ -34,17 +34,17 @@ ai_client = None  # Will be initialized when API key is available
 @app.route('/')
 def index():
     """Render the landing page."""
-    return render_template('index.html')
+    return render_template('index_new.html')
 
 @app.route('/resume-builder')
 def resume_builder():
     """Render the resume builder page."""
-    return render_template('resume_builder.html')
+    return render_template('resume_builder_new.html')
 
 @app.route('/cover-letter-builder')
 def cover_letter_builder():
     """Render the cover letter builder page."""
-    return render_template('cover_letter_builder.html')
+    return render_template('cover_letter_builder_new.html')
 
 @app.route('/api/generate-resume', methods=['POST'])
 def generate_resume():

@@ -1,0 +1,59 @@
+<!-- Step 4: Preview -->
+<div class="form-step" id="preview-step">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Your Cover Letter</h2>
+        <p class="text-slate-600 dark:text-slate-400">Review your generated cover letter and download it as a PDF.</p>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loading-cover-letter" class="flex flex-col items-center justify-center py-12">
+        <div class="w-16 h-16 border-4 border-primary-200 dark:border-primary-900 border-t-primary-600 dark:border-t-primary-500 rounded-full animate-spin mb-4"></div>
+        <p class="text-slate-600 dark:text-slate-400 text-center">Generating your professional cover letter...</p>
+        <p class="text-sm text-slate-500 dark:text-slate-500 text-center mt-2">This may take a few moments</p>
+    </div>
+    
+    <!-- Cover Letter Preview -->
+    <div id="cover-letter-preview" class="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 border border-slate-200 dark:border-slate-700 mb-8 hidden">
+        <div class="mb-8">
+            <div class="text-right mb-6">
+                <p id="preview-name" class="text-lg font-bold text-slate-900 dark:text-white">John Doe</p>
+                <p id="preview-email" class="text-slate-600 dark:text-slate-400">john.doe@example.com</p>
+                <p id="preview-phone" class="text-slate-600 dark:text-slate-400">(123) 456-7890</p>
+                <p id="preview-location" class="text-slate-600 dark:text-slate-400">New York, NY</p>
+            </div>
+            
+            <p id="preview-date" class="text-slate-600 dark:text-slate-400 mb-4">April 15, 2025</p>
+            
+            <div class="mb-6">
+                <p id="preview-company" class="text-slate-900 dark:text-white font-bold">Company Name</p>
+                <p id="preview-job-title" class="text-slate-600 dark:text-slate-400">Re: Application for Position</p>
+            </div>
+            
+            <div id="preview-salutation" class="mb-4 text-slate-900 dark:text-white">Dear Hiring Manager,</div>
+        </div>
+        
+        <div id="cover-letter-content" class="prose prose-slate dark:prose-invert max-w-none">
+            <!-- AI-generated content will be inserted here -->
+        </div>
+        
+        <div class="mt-8">
+            <p class="text-slate-900 dark:text-white mb-4">Sincerely,</p>
+            <p id="preview-signature" class="text-slate-900 dark:text-white font-bold">John Doe</p>
+        </div>
+    </div>
+    
+    <div class="mt-8 flex justify-between">
+        <button type="button" class="prev-step bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg border border-slate-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Edit Cover Letter
+        </button>
+        <a href="/download-cover-letter-pdf" id="download-cover-letter" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            Download PDF
+        </a>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<!-- Step 2: Job Details -->
+<div class="form-step" id="job-step">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Job Details</h2>
+        <p class="text-slate-600 dark:text-slate-400">Tell us about the job you're applying for.</p>
+    </div>
+    
+    <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label for="jobTitle" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Job Title <span class="text-red-500">*</span></label>
+                <input type="text" id="jobTitle" name="jobTitle" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+            </div>
+            
+            <div>
+                <label for="company" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Company Name <span class="text-red-500">*</span></label>
+                <input type="text" id="company" name="company" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+            </div>
+            
+            <div>
+                <label for="hiringManager" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Hiring Manager's Name (if known)</label>
+                <input type="text" id="hiringManager" name="hiringManager" placeholder="Leave blank if unknown" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+            </div>
+            
+            <div class="md:col-span-2">
+                <label for="jobRequirements" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Job Requirements</label>
+                <textarea id="jobRequirements" name="jobRequirements" rows="4" placeholder="Copy and paste key requirements from the job posting" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"></textarea>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Tip: Including job requirements helps our AI tailor your cover letter to the specific position.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-8 flex justify-between">
+        <button type="button" class="prev-step bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg border border-slate-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Previous
+        </button>
+        <button type="button" class="next-step bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            Next: Highlights
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Step 3: Experience & Skills Highlights -->
+<div class="form-step" id="highlights-step">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Experience & Skills Highlights</h2>
+        <p class="text-slate-600 dark:text-slate-400">Highlight your most relevant experience and skills for this position.</p>
+    </div>
+    
+    <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-6">
+        <div class="mb-6">
+            <label for="experienceHighlights" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Key Experience to Highlight</label>
+            <textarea id="experienceHighlights" name="experienceHighlights" rows="4" placeholder="List your most relevant experience for this position (separate with new lines)" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"></textarea>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Example: 5 years of project management experience, Led a team of 10 developers</p>
+        </div>
+        
+        <div class="mb-6">
+            <label for="skillsHighlights" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Key Skills to Highlight</label>
+            <textarea id="skillsHighlights" name="skillsHighlights" rows="4" placeholder="List your most relevant skills for this position (separate with new lines)" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"></textarea>
+            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Example: JavaScript, Project Management, Customer Service</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label for="tone" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Tone of Letter</label>
+                <select id="tone" name="tone" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                    <option value="professional">Professional</option>
+                    <option value="enthusiastic">Enthusiastic</option>
+                    <option value="confident">Confident</option>
+                    <option value="formal">Formal</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="template" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Cover Letter Template</label>
+                <select id="template" name="template" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                    <option value="modern">Modern</option>
+                    <option value="professional">Professional</option>
+                    <option value="minimal">Minimal</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-8 flex justify-between">
+        <button type="button" class="prev-step bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg border border-slate-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Previous
+        </button>
+        <button type="button" id="generate-cover-letter" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
+            </svg>
+            Generate Cover Letter
+        </button>
+    </div>
+</div>

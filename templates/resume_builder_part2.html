@@ -1,0 +1,112 @@
+<!-- Step 2: Work Experience -->
+<div class="form-step" id="experience-step">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Work Experience</h2>
+        <p class="text-slate-600 dark:text-slate-400">Add your relevant work experience, starting with the most recent.</p>
+    </div>
+    
+    <div id="experience-container">
+        <div class="experience-entry bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="company1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Company <span class="text-red-500">*</span></label>
+                    <input type="text" id="company1" name="company[]" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                </div>
+                
+                <div>
+                    <label for="jobTitle1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Job Title <span class="text-red-500">*</span></label>
+                    <input type="text" id="jobTitle1" name="jobTitle[]" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                </div>
+                
+                <div>
+                    <label for="dates1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Dates</label>
+                    <input type="text" id="dates1" name="dates[]" placeholder="e.g., Jan 2020 - Present" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                </div>
+                
+                <div class="md:col-span-2">
+                    <label for="description1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Description</label>
+                    <textarea id="description1" name="description[]" rows="4" placeholder="Describe your responsibilities and achievements" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"></textarea>
+                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Tip: Include quantifiable achievements and use action verbs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button type="button" id="add-experience" class="mb-8 inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+        </svg>
+        Add Another Experience
+    </button>
+    
+    <div class="mt-8 flex justify-between">
+        <button type="button" class="prev-step bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg border border-slate-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Previous
+        </button>
+        <button type="button" class="next-step bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            Next: Education
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Step 3: Education -->
+<div class="form-step" id="education-step">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Education</h2>
+        <p class="text-slate-600 dark:text-slate-400">Add your educational background, starting with the most recent.</p>
+    </div>
+    
+    <div id="education-container">
+        <div class="education-entry bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="institution1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Institution <span class="text-red-500">*</span></label>
+                    <input type="text" id="institution1" name="institution[]" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                </div>
+                
+                <div>
+                    <label for="degree1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Degree <span class="text-red-500">*</span></label>
+                    <input type="text" id="degree1" name="degree[]" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                </div>
+                
+                <div>
+                    <label for="eduDates1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Dates</label>
+                    <input type="text" id="eduDates1" name="eduDates[]" placeholder="e.g., 2016 - 2020" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                </div>
+                
+                <div>
+                    <label for="field1" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Field of Study</label>
+                    <input type="text" id="field1" name="field[]" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button type="button" id="add-education" class="mb-8 inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+        </svg>
+        Add Another Education
+    </button>
+    
+    <div class="mt-8 flex justify-between">
+        <button type="button" class="prev-step bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg border border-slate-300 dark:border-slate-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Previous
+        </button>
+        <button type="button" class="next-step bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+            Next: Skills
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-slate-900 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Create Your Professional Resume</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Fill in your details below and let our AI generate a tailored, professional resume for your target job.</p>
+    </div>
+</section>
+
+<!-- Resume Builder Form -->
+<section class="py-12 bg-slate-50 dark:bg-slate-800 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden">
+            <!-- Progress Steps -->
+            <div class="relative p-6 border-b border-slate-200 dark:border-slate-700">
+                <div class="flex justify-between items-center">
+                    <div class="w-full absolute top-1/2 h-0.5 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="relative z-10 flex justify-between w-full">
+                        <!-- Step 1 -->
+                        <div class="step-item" data-step="personal">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300 step-active">1</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300 step-active-text">Personal</div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-item" data-step="experience">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">2</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Experience</div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-item" data-step="education">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">3</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Education</div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="step-item" data-step="skills">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">4</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Skills</div>
+                        </div>
+                        
+                        <!-- Step 5 -->
+                        <div class="step-item" data-step="preview">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">5</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Preview</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Content -->
+            <form id="resumeForm" class="p-6">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="personal-step">
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Personal Information</h2>
+                        <p class="text-slate-600 dark:text-slate-400">Let's start with your basic details.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="fullName" name="fullName" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Phone <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                        </div>
+                        
+                        <div>
+                            <label for="location" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, State" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="linkedin" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">LinkedIn (optional)</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+                        </div>
+                        
+                        <div>
+                            <label for="jobTarget" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Target Job Title <span class="text-red-500">*</span></label>
+                            <input type="text" id="jobTarget" name="jobTarget" placeholder="e.g., Software Engineer, Marketing Manager" class="block w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-end">
+                        <button type="button" class="next-step bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center">
+                            Next: Experience
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>

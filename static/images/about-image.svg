@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="400px" viewBox="0 0 600 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>About Image</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3B82F6" offset="0%"></stop>
+            <stop stop-color="#2563EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#F59E0B" offset="0%"></stop>
+            <stop stop-color="#D97706" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="About-Image" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="#F8FAFC" x="0" y="0" width="600" height="400" rx="20"></rect>
+        
+        <!-- Person with Resume -->
+        <g id="Person" transform="translate(100, 100)">
+            <circle id="Head" fill="#3B82F6" cx="50" cy="50" r="50"></circle>
+            <rect id="Body" fill="#3B82F6" x="25" y="100" width="50" height="100" rx="25"></rect>
+            <rect id="Arm-Left" fill="#3B82F6" x="0" y="110" width="25" height="60" rx="10"></rect>
+            <rect id="Arm-Right" fill="#3B82F6" x="75" y="110" width="100" height="20" rx="10"></rect>
+            <rect id="Leg-Left" fill="#3B82F6" x="30" y="200" width="15" height="80" rx="7.5"></rect>
+            <rect id="Leg-Right" fill="#3B82F6" x="55" y="200" width="15" height="80" rx="7.5"></rect>
+        </g>
+        
+        <!-- Resume Document -->
+        <g id="Resume" transform="translate(250, 50)">
+            <rect id="Paper" fill="#FFFFFF" x="0" y="0" width="250" height="300" rx="10" stroke="#E2E8F0" stroke-width="2"></rect>
+            <rect id="Header" fill="url(#linearGradient-1)" x="0" y="0" width="250" height="50" rx="10"></rect>
+            <rect id="Name" fill="#FFFFFF" x="20" y="15" width="150" height="20" rx="4"></rect>
+            
+            <rect id="Section1" fill="#E5E7EB" x="20" y="70" width="210" height="10" rx="2"></rect>
+            <rect id="Line1" fill="#F3F4F6" x="20" y="90" width="210" height="5" rx="2"></rect>
+            <rect id="Line2" fill="#F3F4F6" x="20" y="105" width="210" height="5" rx="2"></rect>
+            <rect id="Line3" fill="#F3F4F6" x="20" y="120" width="150" height="5" rx="2"></rect>
+            
+            <rect id="Section2" fill="#E5E7EB" x="20" y="145" width="210" height="10" rx="2"></rect>
+            <rect id="Line4" fill="#F3F4F6" x="20" y="165" width="210" height="5" rx="2"></rect>
+            <rect id="Line5" fill="#F3F4F6" x="20" y="180" width="210" height="5" rx="2"></rect>
+            <rect id="Line6" fill="#F3F4F6" x="20" y="195" width="180" height="5" rx="2"></rect>
+            
+            <rect id="Section3" fill="#E5E7EB" x="20" y="220" width="210" height="10" rx="2"></rect>
+            <rect id="Line7" fill="#F3F4F6" x="20" y="240" width="100" height="5" rx="2"></rect>
+            <rect id="Line8" fill="#F3F4F6" x="130" y="240" width="100" height="5" rx="2"></rect>
+            <rect id="Line9" fill="#F3F4F6" x="20" y="255" width="80" height="5" rx="2"></rect>
+            <rect id="Line10" fill="#F3F4F6" x="110" y="255" width="120" height="5" rx="2"></rect>
+        </g>
+        
+        <!-- AI Brain -->
+        <g id="AI-Brain" transform="translate(450, 250)">
+            <circle id="Brain-Circle" fill="url(#linearGradient-2)" cx="50" cy="50" r="50"></circle>
+            <path d="M50,20 C65,20 75,30 75,45 C75,60 65,70 50,70 C35,70 25,60 25,45 C25,30 35,20 50,20 Z" id="Brain-Top" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-dasharray="5,5"></path>
+            <path d="M30,40 C30,30 40,25 50,25 C60,25 70,30 70,40" id="Connection-1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M30,50 C30,60 40,65 50,65 C60,65 70,60 70,50" id="Connection-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            <circle id="Node-1" fill="#FFFFFF" cx="30" cy="40" r="3"></circle>
+            <circle id="Node-2" fill="#FFFFFF" cx="50" cy="25" r="3"></circle>
+            <circle id="Node-3" fill="#FFFFFF" cx="70" cy="40" r="3"></circle>
+            <circle id="Node-4" fill="#FFFFFF" cx="30" cy="50" r="3"></circle>
+            <circle id="Node-5" fill="#FFFFFF" cx="50" cy="65" r="3"></circle>
+            <circle id="Node-6" fill="#FFFFFF" cx="70" cy="50" r="3"></circle>
+        </g>
+        
+        <!-- Decorative Elements -->
+        <circle id="Circle1" fill="#3B82F6" opacity="0.1" cx="50" cy="50" r="30"></circle>
+        <circle id="Circle2" fill="#F59E0B" opacity="0.1" cx="550" cy="100" r="40"></circle>
+        <rect id="Rectangle1" fill="#10B981" opacity="0.1" x="500" y="20" width="60" height="60" rx="10"></rect>
+        <rect id="Rectangle2" fill="#EF4444" opacity="0.1" x="50" cy="300" width="40" height="40" rx="8"></rect>
+    </g>
+</svg>

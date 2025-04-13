@@ -1,0 +1,223 @@
+{% extends "base_new.html" %}
+
+{% block title %}Cover Letter Builder - Create Your Professional Cover Letter{% endblock %}
+
+{% block meta_description %}Create a professional cover letter with our AI-powered cover letter generator. Generate tailored content for your job application.{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-slate-900 py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Create Your Professional Cover Letter</h1>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto">Fill in your details below and let our AI generate a tailored, professional cover letter for your job application.</p>
+    </div>
+</section>
+
+<!-- Cover Letter Builder Form -->
+<section class="py-12 bg-slate-50 dark:bg-slate-800 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden">
+            <!-- Progress Steps -->
+            <div class="relative p-6 border-b border-slate-200 dark:border-slate-700">
+                <div class="flex justify-between items-center">
+                    <div class="w-full absolute top-1/2 h-0.5 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="relative z-10 flex justify-between w-full">
+                        <!-- Step 1 -->
+                        <div class="step-item" data-step="personal">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300 step-active">1</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300 step-active-text">Personal</div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-item" data-step="job">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">2</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Job Details</div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-item" data-step="highlights">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">3</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Highlights</div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="step-item" data-step="preview">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 flex items-center justify-center font-semibold text-sm relative z-10 transition-all duration-300">4</div>
+                            <div class="text-xs font-medium text-slate-600 dark:text-slate-400 mt-2 text-center transition-all duration-300">Preview</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Content -->
+            <form id="coverLetterForm" class="p-6">
+                {% include 'cover_letter_builder_part1.html' %}
+                {% include 'cover_letter_builder_part2.html' %}
+                {% include 'cover_letter_builder_part3.html' %}
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Form navigation
+        const nextButtons = document.querySelectorAll('.next-step');
+        const prevButtons = document.querySelectorAll('.prev-step');
+        const progressSteps = document.querySelectorAll('.step-item');
+        const formSteps = document.querySelectorAll('.form-step');
+        
+        // Next button functionality
+        nextButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = document.querySelector('.form-step.active');
+                const nextStep = currentStep.nextElementSibling;
+                
+                // Move to next step
+                currentStep.classList.remove('active');
+                nextStep.classList.add('active');
+                
+                // Update progress bar
+                const nextStepId = nextStep.id.split('-')[0];
+                updateProgressBar(nextStepId);
+                
+                // Scroll to top of form
+                document.querySelector('#coverLetterForm').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Previous button functionality
+        prevButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStep = document.querySelector('.form-step.active');
+                const prevStep = currentStep.previousElementSibling;
+                
+                // Move to previous step
+                currentStep.classList.remove('active');
+                prevStep.classList.add('active');
+                
+                // Update progress bar
+                const prevStepId = prevStep.id.split('-')[0];
+                updateProgressBar(prevStepId);
+                
+                // Scroll to top of form
+                document.querySelector('#coverLetterForm').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Update progress bar
+        function updateProgressBar(stepId) {
+            progressSteps.forEach(step => {
+                const stepNumber = step.querySelector('div:first-child');
+                const stepLabel = step.querySelector('div:last-child');
+                
+                // Reset all steps
+                stepNumber.classList.remove('bg-primary-600', 'text-white');
+                stepNumber.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-400');
+                
+                // Activate current and previous steps
+                if (step.dataset.step === stepId || 
+                    (stepId === 'job' && step.dataset.step === 'personal') ||
+                    (stepId === 'highlights' && ['personal', 'job'].includes(step.dataset.step)) ||
+                    (stepId === 'preview' && ['personal', 'job', 'highlights'].includes(step.dataset.step))) {
+                    
+                    stepNumber.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-400');
+                    stepNumber.classList.add('bg-primary-600', 'text-white');
+                }
+            });
+        }
+        
+        // Generate cover letter
+        const generateCoverLetterBtn = document.getElementById('generate-cover-letter');
+        const coverLetterPreview = document.getElementById('cover-letter-preview');
+        const loadingIndicator = document.getElementById('loading-cover-letter');
+        
+        generateCoverLetterBtn.addEventListener('click', function() {
+            // Show loading indicator
+            loadingIndicator.style.display = 'flex';
+            coverLetterPreview.style.display = 'none';
+            
+            // Move to preview step
+            const currentStep = document.querySelector('.form-step.active');
+            const previewStep = document.getElementById('preview-step');
+            
+            currentStep.classList.remove('active');
+            previewStep.classList.add('active');
+            
+            // Update progress bar
+            updateProgressBar('preview');
+            
+            // Scroll to top of form
+            document.querySelector('#coverLetterForm').scrollIntoView({ behavior: 'smooth' });
+            
+            // Update personal info in preview
+            document.getElementById('preview-name').textContent = document.getElementById('fullName').value;
+            document.getElementById('preview-email').textContent = document.getElementById('email').value;
+            document.getElementById('preview-phone').textContent = document.getElementById('phone').value;
+            document.getElementById('preview-location').textContent = document.getElementById('location').value;
+            document.getElementById('preview-signature').textContent = document.getElementById('fullName').value;
+            
+            // Update job info in preview
+            document.getElementById('preview-company').textContent = document.getElementById('company').value;
+            document.getElementById('preview-job-title').textContent = 'Re: Application for ' + document.getElementById('jobTitle').value;
+            
+            // Update salutation
+            const hiringManager = document.getElementById('hiringManager').value;
+            document.getElementById('preview-salutation').textContent = hiringManager ? 
+                `Dear ${hiringManager},` : 'Dear Hiring Manager,';
+            
+            // Set current date
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('preview-date').textContent = today.toLocaleDateString('en-US', options);
+            
+            // Collect form data
+            const formData = {
+                personal_info: {
+                    name: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    location: document.getElementById('location').value
+                },
+                job_details: {
+                    title: document.getElementById('jobTitle').value,
+                    company: document.getElementById('company').value,
+                    hiring_manager: document.getElementById('hiringManager').value,
+                    requirements: document.getElementById('jobRequirements').value
+                },
+                experience_highlights: document.getElementById('experienceHighlights').value.split('\n').filter(item => item.trim() !== ''),
+                skills_highlights: document.getElementById('skillsHighlights').value.split('\n').filter(item => item.trim() !== ''),
+                tone: document.getElementById('tone').value,
+                template: document.getElementById('template').value
+            };
+            
+            // Call API to generate cover letter
+            fetch('/api/generate-cover-letter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Hide loading indicator
+                loadingIndicator.style.display = 'none';
+                coverLetterPreview.style.display = 'block';
+                
+                // Populate cover letter preview
+                document.getElementById('cover-letter-content').innerHTML = data.cover_letter.replace(/\n/g, '<br>');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loadingIndicator.style.display = 'none';
+                coverLetterPreview.style.display = 'block';
+                document.getElementById('cover-letter-content').innerHTML = '<p class="text-red-500">Error generating cover letter. Please try again.</p>';
+            });
+        });
+    });
+</script>
+{% endblock %}
